@@ -1,0 +1,65 @@
+﻿Setting up Player Table:
+
+
+CREATE TABLE `PLAYER` ( `PlayerID` INT NOT NULL , `firstName` VARCHAR(50) NOT NULL , `middleName` VARCHAR(1) NOT NULL , `lastName` VARCHAR(50) NOT NULL , `pos` VARCHAR(5) NOT NULL , `height` INT NOT NULL , `college` VARCHAR(50) NOT NULL , `birthDate` DATE NOT NULL , `birthState` VARCHAR(2) NOT NULL , PRIMARY KEY (`PlayerID`)) ENGINE = InnoDB;
+
+
+
+
+Setting up the Series Table:
+
+
+CREATE TABLE `SERIES` ( `gameID` INT NOT NULL , `tmIDW` INT(3) NOT NULL , `tmIDL` INT(3) NOT NULL , `year` INT(4) NOT NULL , `round` INT(4) NOT NULL , `W` INT(3) NOT NULL , `L` INT(3) NOT NULL , PRIMARY KEY (`gameID`)) ENGINE = InnoDB; 
+
+
+Setting up Player Roster Table:
+
+
+CREATE TABLE `PLAYER_ROSTER` ( `PlayerID` INT NOT NULL , `tmID` INT NOT NULL , `salary` INT NOT NULL , `suspension` BOOLEAN NOT NULL , PRIMARY KEY (`PlayerID`)) ENGINE = InnoDB;
+
+
+Setting up Player History Table:
+
+
+CREATE TABLE `PLAYER_HISTORY` ( `PHistoryID` INT NOT NULL , `playerID` INT NOT NULL , `tmID` INT NOT NULL , `salary` INT NOT NULL , `year` INT NOT NULL , `GP` INT NOT NULL , `points` INT NOT NULL , `rebounds` INT NOT NULL , `assists` INT NOT NULL , `steals` INT NOT NULL , `blocks` INT NOT NULL , `turnovers` INT NOT NULL , PRIMARY KEY (`PHistoryID`)) ENGINE = InnoDB;
+
+
+Setting up the Coach Table:
+
+
+CREATE TABLE `COACH` ( `coachID` INT NOT NULL , `firstName` VARCHAR(50) NOT NULL , `middleName` VARCHAR(1) NOT NULL , `lastName` VARCHAR(50) NOT NULL , `birthDate` DATE NOT NULL , PRIMARY KEY (`coachID`)) ENGINE = InnoDB;
+
+
+Setting up the Coach Roster Table:
+
+
+CREATE TABLE `COACH_ROSTER` ( `coachID` INT NOT NULL , `tmID` INT NOT NULL , `salary` INT NOT NULL , PRIMARY KEY (`coachID`)) ENGINE = InnoDB;
+
+
+
+
+
+
+Setting up the Coach History Table:
+
+
+CREATE TABLE `COACH_HISTORY` ( `CHistoryID` INT NOT NULL , `coachID` INT NOT NULL , `tmID` INT NOT NULL , `year` INT NOT NULL , `won` INT NOT NULL , `lost` INT NOT NULL , PRIMARY KEY (`CHistoryID`)) ENGINE = InnoDB;
+
+
+Setting up the Team Table:
+
+
+CREATE TABLE `TEAM` ( `tmID` INT NOT NULL , `teamName` VARCHAR(50) NOT NULL , PRIMARY KEY (`tmID`)) ENGINE = InnoDB;
+
+
+Setting up the Team History Table:
+
+
+CREATE TABLE `TEAM_HISTORY` ( `THistoryID` INT NOT NULL , `tmID` INT NOT NULL , `year` INT NOT NULL , `o_pts` INT NOT NULL , `d_pts` INT NOT NULL , `won` INT NOT NULL , `lost` INT NOT NULL , `games` INT NOT NULL , `min` INT NOT NULL , PRIMARY KEY (`THistoryID`)) ENGINE = InnoDB;
+
+
+
+
+
+
+INSERT INTO PLAYER (PlayerID, firstName, middleName, lastName, pos, height, college, birthDate, birthState) VALUES (1, "Harry", "J","Potter", "L", 55, "Under The Stairs University","2018-11-15", "MI");
